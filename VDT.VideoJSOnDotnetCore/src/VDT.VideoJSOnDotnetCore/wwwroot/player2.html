@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
+
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+</head>
+<body>
+    <video id="vidata-player" class="video-js" controls preload="auto" width="615" height="346" data-setup="{}" poster="">
+        <!--<source src="https://vdt-bandicoot.s3.amazonaws.com/video-cebc3e4d-f50c-469f-9456-fc819656b876/f5961de7-6807-4e52-b3d4-1d4f0af5ee23-Resolution720p.mp4" type='video/mp4'>-->
+        <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+    </video>
+
+    <script src="http://vjs.zencdn.net/5.8.8/video.js"></script>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <script>
+    (function ($) {
+        $(document).ready(function () {
+            var videoId = "f97a9a7b-7705-4b13-ac73-0ac8d8b1ec60";
+            var videoIdFromUrl = getUrlParameter('vdtid');
+            if (getUrlParameter('vdtid'))
+                videoId = videoIdFromUrl;
+            //alert("Load " + videoId + "...");
+
+            $.ajax({
+                url: "http://vdt-api-bandicoot2-201606.azurewebsites.net/v1/mss/" + videoId,
+                headers: {"api-key": "0000123d-9cf6-4242-8b29-4b18bb8197e1"},
+                type: "GET",
+                //beforeSend: function (xhr) { xhr.setRequestHeader('X-Test-Header', 'test-value'); },
+                success: function (data) {
+                    //alert(data);
+                    videojs('vidata-player').ready(function () {
+                        var myPlayer = this;
+                        myPlayer.src({ type: 'video/mp4', src: data.DownloadUri });
+                        this.play();
+                        //$('#vidata-player').attr('poster', data.CoverImgUri);
+                    });
+                }
+            });
+        });
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+    })(jQuery);
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{923AF903-1F46-47E0-B9B9-BCD9F4FBD2C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2F493A4E-4F9C-4A95-84BB-6252993F59DC}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "VDT.VideoJSOnDotnetCore", "src\VDT.VideoJSOnDotnetCore\VDT.VideoJSOnDotnetCore.xproj", "{A59C7619-1FEC-450C-8199-022104CDF96F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A59C7619-1FEC-450C-8199-022104CDF96F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A59C7619-1FEC-450C-8199-022104CDF96F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A59C7619-1FEC-450C-8199-022104CDF96F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A59C7619-1FEC-450C-8199-022104CDF96F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A59C7619-1FEC-450C-8199-022104CDF96F} = {923AF903-1F46-47E0-B9B9-BCD9F4FBD2C9}
+	EndGlobalSection
+EndGlobal
