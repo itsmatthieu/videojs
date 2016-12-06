@@ -4,3 +4,5 @@
 
 *.suo
 *.dg
+/VDT.VideoJSOnDotnetCore/src/VDT.VideoJSOnDotnetCore/bin/Release/netcoreapp1.0
+/VDT.VideoJSOnDotnetCore/src/VDT.VideoJSOnDotnetCore/obj/Release/netcoreapp1.0
